@@ -8,10 +8,6 @@
 		"seed": "node seed.js",
 		"test": "jest --testEnvironment=node --watchAll --verbose --runInBand"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/RanSolo/vidly-api-node.git"
-	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
