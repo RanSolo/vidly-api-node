@@ -15,15 +15,15 @@ node {
   //   }
   // }
    stage('test with a DB') {
-     def mongodb = docker.image('mongodb').run("-e MONGODB_ALLOW_EMPTY_PASSWORD=yes") 
+     def mongo = docker.image('mongo').run("-e MONGO_ALLOW_EMPTY_PASSWORD=yes") 
      def myTestContainer = docker.image('node:12.18.4')
      myTestContainer.pull()
-     myTestContainer.inside("--link ${mongodb.id}:mongodb") { // using linking, mongodb will be available at host: mongodb, port: 3306
+     myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 3306
           sh 'npm install --only=dev' 
           sh 'npm install -g jest@22.2.2'
           sh 'npm test'                     
      }                                   
-     mongodb.stop()
+     mongo.stop()
    }                                     
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
