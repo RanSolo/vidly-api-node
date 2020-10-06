@@ -20,7 +20,8 @@ node {
      myTestContainer.pull()
      myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 3306
           sh 'npm install --only=dev' 
-          sh 'npm test'                     
+          sh 'npm test -- --updateSnapshot
+  '                     
      }                                   
      mongo.stop()
    }                                     
