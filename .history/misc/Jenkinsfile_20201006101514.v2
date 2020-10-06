@@ -10,6 +10,7 @@ node {
      myTestContainer.pull()
      myTestContainer.inside {
        sh 'npm install --only=dev'
+      sh 'npm install -g jest@22.2.2'
        sh 'npm test'
      }
    }
@@ -18,7 +19,8 @@ node {
      def myTestContainer = docker.image('node:12.18.4')
      myTestContainer.pull()
      myTestContainer.inside("--link ${mongodb.id}:mongodb") { // using linking, mongodb will be available at host: mongodb, port: 3306
-          sh 'npm install --only=dev' 
+          sh 'npm install --only=dev'
+          sh 'npm install -g jest@22.2.2'
           sh 'npm test'                     
      }                                   
      mongodb.stop()
