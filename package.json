@@ -30,6 +30,7 @@
 		"moment": "^2.20.1",
 		"mongoose": "^5.0.2",
 		"string-width": "^4.2.0",
+		"strip-ansi": "^6.0.0",
 		"winston": "^2.4.0",
 		"winston-mongodb": "^3.0.0"
 	},
