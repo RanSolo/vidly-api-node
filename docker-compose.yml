@@ -1,4 +1,7 @@
 web:
+    volumes:
+        - .:/app
+        - /app/node_modules/bcrypt/
     build: .
     command: node index.js
     ports:
@@ -10,10 +13,11 @@ web:
         MONGO_USER: myapp
         MONGO_PASSWORD: mysecurepass
         MONGO_HOST: db
+
 db:
     image: mongo
     ports:
-        - "8081:8081"
+        - "27017:27017"
     environment:
         MONGO_DATABASE: myapp
         MONGO_USER: myapp
