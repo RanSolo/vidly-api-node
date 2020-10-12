@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js --detectOpenHandles --forceExit",
+		"start": "node index.js --runInBand --detectOpenHandles --forceExit",
 		"seed": "node seed.js",
 		"test": "jest --testEnvironment=node"
 	},
@@ -36,6 +36,7 @@
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.11.5",
+		"bcryptjs": "*",
 		"jest": "^22.2.2",
 		"supertest": "^3.0.0"
 	}
