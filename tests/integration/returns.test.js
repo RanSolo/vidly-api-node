@@ -69,7 +69,7 @@ describe("/api/returns", () => {
 		customerId = "";
 
 		const res = await exec();
-
+		console.log("res", res);
 		expect(res.status).toBe(400);
 	});
 

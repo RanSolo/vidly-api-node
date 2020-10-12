@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js --detectOpenHandles",
+		"start": "node index.js --detectOpenHandles --forceExit",
 		"seed": "node seed.js",
 		"test": "jest --testEnvironment=node"
 	},
