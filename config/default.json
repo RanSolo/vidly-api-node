@@ -1,6 +1,6 @@
 {
 	"jwtPrivateKey": "unsecureKey",
 	"db": "mongodb://db:27017/myapp",
-	"port": "3901",
+	"port": "3900",
 	"requiresAuth": false
 }
