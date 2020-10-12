@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
+		"start": "node index.js --detectOpenHandles",
 		"seed": "node seed.js",
 		"test": "jest --testEnvironment=node"
 	},
