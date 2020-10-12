@@ -1,7 +1,7 @@
 web:
     volumes:
         - .:/app
-        - /app/node_modules/bcryptjs/
+        - /app/node_modules/bcrypt
     build: .
     command: node index.js
     ports:
