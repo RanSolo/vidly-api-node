@@ -1,7 +1,7 @@
 FROM node:12
 WORKDIR /app
 ADD . /app
-RUN npm install
+RUN npm rebuild
 
 RUN npm install -g jenkins
 RUN npm install -g winston
