@@ -13,13 +13,6 @@ describe("/api/returns", () => {
 	let movie;
 	let token;
 
-	const exec = () => {
-		return request(server)
-			.post("/api/returns")
-			.set("x-auth-token", token)
-			.send({ customerId, movieId });
-	};
-
 	beforeEach(async () => {
 		server = require("../../index");
 
@@ -52,10 +45,16 @@ describe("/api/returns", () => {
 	});
 
 	afterEach(async () => {
+		await Rental.deleteOne({});
+		await Movie.deleteOne({});
 		await server.close();
-		await Rental.remove({});
-		await Movie.remove({});
 	});
+	const exec = () => {
+		return request(server)
+			.post("/api/returns")
+			.set("x-auth-token", token)
+			.send({ customerId, movieId });
+	};
 
 	//it("should return 401 if client is not logged in", async () => {
 	//	token = "";
@@ -69,7 +68,6 @@ describe("/api/returns", () => {
 		customerId = "";
 
 		const res = await exec();
-		console.log("res", res);
 		expect(res.status).toBe(400);
 	});
 
@@ -82,7 +80,7 @@ describe("/api/returns", () => {
 	});
 
 	it("should return 404 if no rental found for the customer/movie", async () => {
-		await Rental.remove({});
+		await Rental.deleteOne({});
 
 		const res = await exec();
 
