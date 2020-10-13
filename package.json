@@ -16,7 +16,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"bcryptjs": "2.4.3",
+		"bcrypt-nodejs": "0.0.3",
 		"config": "^1.29.4",
 		"cors": "^2.8.4",
 		"express": "^4.16.2",
@@ -31,7 +31,7 @@
 		"mongoose": "^5.0.2",
 		"string-width": "^4.2.0",
 		"strip-ansi": "^6.0.0",
-		"winston": "^2.4.0",
+		"winston": "^2.4.5",
 		"winston-mongodb": "^3.0.0"
 	},
 	"devDependencies": {
