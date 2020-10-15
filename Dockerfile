@@ -1,6 +1,6 @@
 FROM node:12
 WORKDIR /app
-RUN npm install
+RUN npm build
 RUN npm install -g jenkins
 RUN npm install -g winston
 USER root
