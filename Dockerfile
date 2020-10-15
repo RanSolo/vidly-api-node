@@ -13,6 +13,6 @@ RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 #COPY plugins.txt /usr/share/jenkins/plugins.txt
 #RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 # RUN commands
-
+RUN apt-get install docker.io
 EXPOSE 3000
 CMD npm start
