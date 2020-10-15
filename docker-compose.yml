@@ -1,4 +1,6 @@
 web:
+    volumes:
+        - .:/app
     build: .
     command: node index.js
     ports:
