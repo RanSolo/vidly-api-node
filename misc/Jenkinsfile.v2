@@ -12,7 +12,7 @@ node {
      myTestContainer.inside {
       withEnv([
         'HOME=.',
-    ]),
+    ])
      "--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 3306
           sh 'npm install --only=dev --cache npm_cache'
           sh 'npm test'                     
