@@ -34,11 +34,9 @@
 		"string-width": "^4.2.0",
 		"strip-ansi": "^6.0.0",
 		"winston": "^2.4.5",
-		"winston-mongodb": "^3.0.0"
-	},
-	"devDependencies": {
+		"winston-mongodb": "^3.0.0",
 		"@babel/preset-env": "^7.11.5",
 		"jest": "^22.2.2",
 		"supertest": "^3.0.0"
-	}
+	},
 }
