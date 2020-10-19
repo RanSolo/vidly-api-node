@@ -19,6 +19,7 @@
 		"bcrypt-nodejs": "0.0.3",
 		"config": "^1.29.4",
 		"cors": "^2.8.4",
+		"docker": "^1.0.0",
 		"express": "^4.16.2",
 		"express-async-errors": "^2.1.0",
 		"fawn": "^2.1.5",
