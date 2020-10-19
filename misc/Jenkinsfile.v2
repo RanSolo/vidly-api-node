@@ -1,7 +1,4 @@
 node {
-   environment {
-        HOME = '.'
-    }
    def commit_id
    stage('Preparation') {
      checkout scm
