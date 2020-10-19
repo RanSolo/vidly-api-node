@@ -4,7 +4,7 @@ web:
     build: .
     command: node index.js
     ports:
-        - "3000:3000"
+        - "3900:3900"
     links:
         - db
     environment:
