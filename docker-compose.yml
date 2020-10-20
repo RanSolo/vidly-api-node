@@ -7,6 +7,8 @@ web:
         - "3000:3000"
     links:
         - db
+    depends_on:
+        - db
     environment:
         MONGO_DATABASE: myapp
         MONGO_USER: myapp
