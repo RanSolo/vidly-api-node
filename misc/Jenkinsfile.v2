@@ -12,7 +12,7 @@ node {
      def myTestContainer = docker.image('node:12.18.4')
      myTestContainer.pull()
      myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 3306
-          sh 'npm install'
+          sh 'npm install --only=dev'
           sh 'npm test'                     
      }     
      mongo.stop()
