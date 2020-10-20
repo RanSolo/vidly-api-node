@@ -16,7 +16,7 @@ web:
 db:
     image: mongo
     ports:
-        - "27017:27017"
+        - "3306:3306"
     environment:
         MONGO_DATABASE: myapp
         MONGO_USER: myapp
