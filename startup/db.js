@@ -8,6 +8,6 @@ module.exports = function () {
 		.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 		.then(() => winston.info(`Connected to ${db}...`))
 		.catch((e) =>
-			winston.info(`Not connected to ${db}:------------- ${e}`),
+			console.error(`Not connected to ${db}:------------- ${e}`),
 		);
 };
