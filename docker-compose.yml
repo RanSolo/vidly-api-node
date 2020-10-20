@@ -6,8 +6,8 @@ web:
     links:
         - db
     environment:
-        MONGO_DATABASE: vidly
-        MONGO_USER: vidly
+        MONGO_DATABASE: myapp
+        MONGO_USER: myapp
         MONGO_PASSWORD: mysecurepass
         MONGO_HOST: db
 
@@ -16,6 +16,6 @@ db:
     ports:
         - "27017:27017"
     environment:
-        MONGO_DATABASE: vidly
-        MONGO_USER: vidly
+        MONGO_DATABASE: myapp
+        MONGO_USER: myapp
         MONGO_PASSWORD: mysecurepass
