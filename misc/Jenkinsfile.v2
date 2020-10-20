@@ -7,7 +7,7 @@ node {
    }
    stage('test with a DB') {
      def mongo = docker.image('mongo').run("-e MONGO_ALLOW_EMPTY_PASSWORD=yes --rm") 
-     def myTestContainer = docker.image('node:12.18.4')
+     def myTestContainer = docker.image('node:12')
      myTestContainer.pull()
      myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 3306
           sh 'npm install --only=dev'
