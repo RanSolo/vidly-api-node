@@ -1,8 +1,10 @@
 web:
+    #volumes:
+    #    - .:/app
     build: .
     command: node index.js
     ports:
-        - "3900:3900"
+        - "3000:3000"
     links:
         - db
     environment:
