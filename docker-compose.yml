@@ -1,13 +1,11 @@
 web:
-    #volumes:
-    #    - .:/app
+    volumes:
+        - .:/app
     build: .
     command: node index.js
     ports:
         - "3000:3000"
     links:
-        - db
-    depends_on:
         - db
     environment:
         MONGO_DATABASE: myapp
