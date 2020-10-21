@@ -12,10 +12,10 @@ require("./startup/validation")();
 
 const port = process.env.PORT || config.get("port");
 const server = app
-	.listen(port, () => winston.info(`Connecting to ${port}...`))
-	.on("error", (e) => {
-		winston.info(`No good ${e}...`);
-		process.exit(10);
+	.listen(port, () => winston.info(`Listening on port ${port}...`))
+	.catch(() => {
+		winston.info(`No good ${port}...`);
+		process.exit(1);
 	});
 
 module.exports = server;
