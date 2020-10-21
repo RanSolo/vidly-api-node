@@ -6,16 +6,16 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     def myTestContainer = docker.image('node:12.18.4')
+     def myTestContainer = docker.image('node:12.8.4')
      myTestContainer.pull()
      myTestContainer.inside {
        sh 'npm install --only=dev'
        sh 'npm test'
      }
    }
+
    stage('test with a DB') {
-     def mongo = docker.image('mongo').run("-e --rm")
-     console.log('mongoid', mongo.id)
+     def mongo = docker.image('mongo').run("-e MONGO_ALLOW_EMPTY_PASSWORD=yes --rm")
      def myTestContainer = docker.image('node:12.18.4')
      myTestContainer.pull()
      myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 27017
