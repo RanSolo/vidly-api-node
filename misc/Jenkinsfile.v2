@@ -9,11 +9,12 @@ node {
      def mongo = docker.image('mongo').run("-e MONGO_ALLOW_EMPTY_PASSWORD=yes --rm") 
      def myTestContainer = docker.image('node:12.18.4')
      myTestContainer.pull()
-     myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 3306
+     myTestContainer.inside("--link ${mongo.id}:mongo") { // using linking, mongo will be available at host: mongo, port: 27017
           sh 'npm install --only=dev'
           sh 'npm test'                     
      }     
      mongo.stop()
+     mongo.remove()
    }                                     
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
