@@ -1,6 +1,4 @@
 web:
-    volumes:
-        - .:/app
     build: .
     command: node index.js
     ports:
@@ -12,7 +10,6 @@ web:
         MONGO_USER: myapp
         MONGO_PASSWORD: mysecurepass
         MONGO_HOST: db
-
 db:
     image: mongo
     ports:
