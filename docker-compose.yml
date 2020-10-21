@@ -1,6 +1,6 @@
 web:
-    #volumes:
-    #    - .:/app
+    volumes:
+        - .:/app
     build: .
     command: node index.js
     ports:
@@ -14,6 +14,8 @@ web:
         MONGO_HOST: db
 
 db:
+    volumes:
+        - .:/app
     image: mongo
     ports:
         - "27017:27017"
