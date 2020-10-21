@@ -12,8 +12,6 @@ web:
         MONGO_USER: myapp
         MONGO_PASSWORD: mysecurepass
         MONGO_HOST: db
-        depends_on:
-            - db
 
 db:
     image: mongo
