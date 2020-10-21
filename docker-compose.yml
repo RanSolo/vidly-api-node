@@ -8,7 +8,6 @@ web:
     links:
         - db
     environment:
-        MONGO_URI: mongodb://db:27017/myapp
         MONGO_DATABASE: myapp
         MONGO_USER: myapp
         MONGO_PASSWORD: mysecurepass
@@ -17,8 +16,6 @@ web:
             - db
 
 db:
-    volumes:
-        - .:/app
     image: mongo
     ports:
         - "27017:27017"
