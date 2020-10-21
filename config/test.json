@@ -1,5 +1,5 @@
 {
 	"jwtPrivateKey": "1234",
-	"db": "mongodb://db:27017/myapp",
+	"db": "mongodb://mongo:27017/myapp",
 	"port": "0"
 }
