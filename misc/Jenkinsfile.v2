@@ -5,7 +5,7 @@ node {
             [$class: 'DevelopersRecipientProvider'],
             [$class: 'RequesterRecipientProvider']
     ])
-    // job
+    // stages
     try {
         def commit_id
         stage('Preparation') {
